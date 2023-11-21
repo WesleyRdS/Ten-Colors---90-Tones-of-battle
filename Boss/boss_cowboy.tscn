@@ -1,0 +1,419 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7m6b63m6nrre"]
+
+[ext_resource type="Script" path="res://Boss/Script/boss_cowboy.gd" id="1_0iqwj"]
+[ext_resource type="Texture2D" uid="uid://ckgeitddrsqxr" path="res://Assets/Boss/inimigo-Sheet.png" id="1_h8ek5"]
+
+[sub_resource type="Animation" id="Animation_ieadr"]
+resource_name = "Attack"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_h8ek5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 3, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Collision:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [PackedVector2Array(-4, -13, 5, -13, 5, -12, 6, -12, 6, -6, 9, -6, 12, -3, 12, -1, 8, 2, 7, 3, 6, 3, 6, 5, 7, 5, 7, 9, 6, 9, 6, 10, 5, 11, 1, 11, 1, 12, -3, 12, -3, 10, -5, 10, -5, 9, -2, 9, -2, 8, 1, 8, 1, 10, 4, 10, 4, 9, 5, 9, 5, 5, 4, 6, -3, 6, -5, 4, -5, 7, -6, 7, -6, 8, -10, 8, -10, 9, -14, 9, -14, 7, -16, 7, -16, 6, -13, 6, -13, 5, -10, 5, -10, 7, -7, 7, -7, 4, -6, 4, -6, 2, -6, -1, -9, -2, -12, -4, -12, -6, -10, -7, -8, -7, -6, -8, -5, -8, -5, -12, -4, -12), PackedVector2Array(-4, -13, 5, -13, 5, -12, 6, -12, 6, -6, 9, -6, 12, -3, 12, -1, 8, 2, 7, 3, 6, 3, 6, 5, 7, 6, 7, 10, 6, 10, 6, 11, 5, 12, 1, 12, 1, 13, -3, 13, -3, 11, -5, 11, -5, 10, -2, 10, -2, 9, 1, 9, 1, 11, 4, 11, 4, 10, 5, 10, 5, 6, 4, 6, -3, 6, -5, 4, -5, 8, -6, 8, -6, 9, -10, 9, -10, 10, -14, 10, -14, 8, -16, 8, -16, 7, -13, 7, -13, 6, -10, 6, -10, 7, -7, 7, -7, 4, -6, 4, -6, 2, -6, -1, -9, -2, -12, -4, -12, -6, -10, -7, -8, -7, -6, -8, -5, -8, -5, -12, -4, -12), PackedVector2Array(-4, -13, 5, -13, 5, -12, 6, -12, 6, -6, 9, -6, 12, -3, 12, -1, 8, 2, 7, 3, 6, 3, 6, 5, 7, 5, 7, 13, 8, 13, 8, 15, 4, 15, 4, 13, 5, 13, 5, 10, 5, 6, 4, 6, -3, 6, -5, 4, -5, 12, -4, 12, -4, 14, -8, 14, -8, 12, -7, 12, -7, 4, -6, 4, -6, 2, -6, -1, -9, -2, -12, -4, -12, -6, -10, -7, -8, -7, -6, -8, -5, -8, -5, -12, -4, -12)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Collision:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Texture:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.419608)]
+}
+
+[sub_resource type="Animation" id="Animation_q58wm"]
+resource_name = "Attack_2"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_h8ek5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 3, 0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Collision:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [PackedVector2Array(-4, -13, 5, -13, 5, -12, 6, -12, 6, -6, 9, -6, 12, -3, 12, -1, 8, 2, 7, 3, 6, 3, 6, 5, 7, 5, 7, 9, 6, 9, 6, 10, 5, 11, 1, 11, 1, 12, -3, 12, -3, 10, -5, 10, -5, 9, -2, 9, -2, 8, 1, 8, 1, 10, 4, 10, 4, 9, 5, 9, 5, 5, 4, 6, -3, 6, -5, 4, -5, 7, -6, 7, -6, 8, -10, 8, -10, 9, -14, 9, -14, 7, -16, 7, -16, 6, -13, 6, -13, 5, -10, 5, -10, 7, -7, 7, -7, 4, -6, 4, -6, 2, -6, -1, -9, -2, -12, -4, -12, -6, -10, -7, -8, -7, -6, -8, -5, -8, -5, -12, -4, -12), PackedVector2Array(-4, -13, 5, -13, 5, -12, 6, -12, 6, -6, 9, -6, 12, -3, 12, -1, 8, 2, 7, 3, 6, 3, 6, 5, 7, 6, 7, 10, 6, 10, 6, 11, 5, 12, 1, 12, 1, 13, -3, 13, -3, 11, -5, 11, -5, 10, -2, 10, -2, 9, 1, 9, 1, 11, 4, 11, 4, 10, 5, 10, 5, 6, 4, 6, -3, 6, -5, 4, -5, 8, -6, 8, -6, 9, -10, 9, -10, 10, -14, 10, -14, 8, -16, 8, -16, 7, -13, 7, -13, 6, -10, 6, -10, 7, -7, 7, -7, 4, -6, 4, -6, 2, -6, -1, -9, -2, -12, -4, -12, -6, -10, -7, -8, -7, -6, -8, -5, -8, -5, -12, -4, -12), PackedVector2Array(-4, -13, 5, -13, 5, -12, 6, -12, 6, -6, 9, -6, 12, -3, 12, -1, 8, 2, 7, 3, 6, 3, 6, 5, 7, 5, 7, 13, 8, 13, 8, 15, 4, 15, 4, 13, 5, 13, 5, 10, 5, 6, 4, 6, -3, 6, -5, 4, -5, 12, -4, 12, -4, 14, -8, 14, -8, 12, -7, 12, -7, 4, -6, 4, -6, 2, -6, -1, -9, -2, -12, -4, -12, -6, -10, -7, -8, -7, -6, -8, -5, -8, -5, -12, -4, -12)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Collision:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Texture:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yw5da"]
+resource_name = "Idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_h8ek5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Collision:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [PackedVector2Array(-4, -13, 5, -13, 5, -12, 6, -12, 6, -6, 9, -6, 12, -3, 12, -1, 8, 2, 7, 2, 7, 12, 8, 13, 8, 15, 4, 15, 4, 13, 5, 12, 5, 5, 4, 6, -3, 6, -5, 4, -5, 12, -4, 12, -4, 14, -8, 14, -8, 12, -7, 11, -7, 4, -6, 2, -6, -1, -9, -2, -12, -4, -12, -6, -10, -7, -8, -7, -6, -8, -5, -8, -5, -12, -4, -12), PackedVector2Array(-4, -13, 5, -13, 5, -12, 6, -12, 6, -6, 9, -6, 12, -3, 12, -1, 8, 2, 7, 2, 7, 12, 8, 13, 8, 16, 4, 16, 4, 13, 5, 12, 5, 5, 4, 6, -3, 6, -5, 4, -5, 12, -4, 12, -4, 15, -8, 15, -8, 12, -7, 11, -7, 4, -6, 2, -6, -1, -9, -2, -12, -4, -12, -6, -10, -7, -8, -7, -6, -8, -5, -8, -5, -12, -4, -12)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Collision:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Texture:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.419608)]
+}
+
+[sub_resource type="Animation" id="Animation_3mpc7"]
+resource_name = "Idle_2"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_h8ek5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Collision:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [PackedVector2Array(-4, -13, 5, -13, 5, -12, 6, -12, 6, -6, 9, -6, 12, -3, 12, -1, 8, 2, 7, 2, 7, 12, 8, 13, 8, 15, 4, 15, 4, 13, 5, 12, 5, 5, 4, 6, -3, 6, -5, 4, -5, 12, -4, 12, -4, 14, -8, 14, -8, 12, -7, 11, -7, 4, -6, 2, -6, -1, -9, -2, -12, -4, -12, -6, -10, -7, -8, -7, -6, -8, -5, -8, -5, -12, -4, -12), PackedVector2Array(-4, -13, 5, -13, 5, -12, 6, -12, 6, -6, 9, -6, 12, -3, 12, -1, 8, 2, 7, 2, 7, 12, 8, 13, 8, 16, 4, 16, 4, 13, 5, 12, 5, 5, 4, 6, -3, 6, -5, 4, -5, 12, -4, 12, -4, 15, -8, 15, -8, 12, -7, 11, -7, 4, -6, 2, -6, -1, -9, -2, -12, -4, -12, -6, -10, -7, -8, -7, -6, -8, -5, -8, -5, -12, -4, -12)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Collision:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Texture:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p2sfh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_h8ek5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Collision:polygon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [PackedVector2Array(-4, -13, 5, -13, 5, -12, 6, -12, 6, -6, 9, -6, 12, -3, 12, -1, 8, 2, 7, 2, 7, 12, 8, 13, 8, 15, 4, 15, 4, 13, 5, 12, 5, 5, 4, 6, -3, 6, -5, 4, -5, 12, -4, 12, -4, 14, -8, 14, -8, 12, -7, 11, -7, 4, -6, 2, -6, -1, -9, -2, -12, -4, -12, -6, -10, -7, -8, -7, -6, -8, -5, -8, -5, -12, -4, -12)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Collision:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Texture:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.419608)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4s1d7"]
+_data = {
+"Attack": SubResource("Animation_ieadr"),
+"Attack_2": SubResource("Animation_q58wm"),
+"Idle": SubResource("Animation_yw5da"),
+"Idle_2": SubResource("Animation_3mpc7"),
+"RESET": SubResource("Animation_p2sfh")
+}
+
+[node name="BossCowboy" type="CharacterBody2D" node_paths=PackedStringArray("timer_attack", "animation") groups=["Enemy"]]
+script = ExtResource("1_0iqwj")
+timer_attack = NodePath("TimerAttack")
+animation = NodePath("AnimationPlayer")
+
+[node name="Texture" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.419608)
+texture = ExtResource("1_h8ek5")
+hframes = 4
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -13, 5, -13, 5, -12, 6, -12, 6, -6, 9, -6, 12, -3, 12, -1, 8, 2, 7, 2, 7, 12, 8, 13, 8, 15, 4, 15, 4, 13, 5, 12, 5, 5, 4, 6, -3, 6, -5, 4, -5, 12, -4, 12, -4, 14, -8, 14, -8, 12, -7, 11, -7, 4, -6, 2, -6, -1, -9, -2, -12, -4, -12, -6, -10, -7, -8, -7, -6, -8, -5, -8, -5, -12, -4, -12)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4s1d7")
+}
+
+[node name="TimerAttack" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="TimerAttack" to="." method="_on_timer_timeout"]

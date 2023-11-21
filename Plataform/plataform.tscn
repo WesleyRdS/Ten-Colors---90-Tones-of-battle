@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://2lh1w27ot3kx"]
+
+[ext_resource type="Texture2D" uid="uid://ceupnockhvpfs" path="res://Assets/Plataform/Celula.png" id="1_qtt0x"]
+[ext_resource type="Script" path="res://Plataform/Script/plataform.gd" id="1_v7b4q"]
+
+[node name="Plataform" type="Area2D" groups=["Plataform"]]
+collision_layer = 32
+collision_mask = 9
+script = ExtResource("1_v7b4q")
+
+[node name="Texture" type="Sprite2D" parent="."]
+position = Vector2(-4, 3)
+texture = ExtResource("1_qtt0x")
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2(-4, 3)
+polygon = PackedVector2Array(-15, -1, 5, -21, 22, -3, 3, 16)
+
+[node name="Number" type="Label" parent="."]
+offset_left = -5.0
+offset_top = -11.0
+offset_right = 35.0
+offset_bottom = 15.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

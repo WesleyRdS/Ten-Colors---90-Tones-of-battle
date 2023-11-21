@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmlye8joel541"]
+
+[ext_resource type="Script" path="res://UI/Script/InicialScreen.gd" id="1_go2nt"]
+[ext_resource type="Texture2D" uid="uid://bqxaiogvy1hk0" path="res://Assets/UI/Tela de inicio.png" id="2_xaqio"]
+[ext_resource type="Texture2D" uid="uid://cfqb12eiut0wi" path="res://Assets/UI/buton dialogo .png" id="3_vfdoh"]
+[ext_resource type="AudioStream" uid="uid://co7jtcynpjaq0" path="res://Sounds/click-for-game-menu-131903.mp3" id="4_1dvub"]
+
+[node name="InicialScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_go2nt")
+
+[node name="TelaDeInicio" type="Sprite2D" parent="."]
+position = Vector2(160, 158)
+texture = ExtResource("2_xaqio")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 179.0
+offset_right = 184.0
+offset_bottom = 219.0
+texture_normal = ExtResource("3_vfdoh")
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 7.0
+offset_right = 41.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 7
+text = "START"
+horizontal_alignment = 1
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1dvub")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="finished" from="Click" to="." method="_on_click_finished"]

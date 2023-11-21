@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://erttcwwr0ggq"]
+
+[ext_resource type="Texture2D" uid="uid://bjohn8t8bafts" path="res://Assets/UI/Sem Título-4.png" id="1_byh46"]
+[ext_resource type="Script" path="res://UI/Script/winner.gd" id="1_us68m"]
+[ext_resource type="Texture2D" uid="uid://cfqb12eiut0wi" path="res://Assets/UI/buton dialogo .png" id="2_ls3tp"]
+[ext_resource type="AudioStream" uid="uid://co7jtcynpjaq0" path="res://Sounds/click-for-game-menu-131903.mp3" id="4_6jdwg"]
+
+[node name="Winner" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -14.0
+offset_right = -26.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_us68m")
+
+[node name="SemTítulo-4" type="Sprite2D" parent="."]
+position = Vector2(187, 177)
+texture = ExtResource("1_byh46")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 282.0
+offset_right = 336.0
+offset_bottom = 322.0
+texture_normal = ExtResource("2_ls3tp")
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6jdwg")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="finished" from="Click" to="." method="_on_click_finished"]

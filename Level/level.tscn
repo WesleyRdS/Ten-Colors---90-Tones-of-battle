@@ -1,0 +1,199 @@
+[gd_scene load_steps=17 format=3 uid="uid://46re27cmu1gf"]
+
+[ext_resource type="PackedScene" uid="uid://2lh1w27ot3kx" path="res://Plataform/plataform.tscn" id="1_p8r4j"]
+[ext_resource type="Script" path="res://Level/Scripts/level.gd" id="1_thx3m"]
+[ext_resource type="Texture2D" uid="uid://bl52aqvr2yrha" path="res://Assets/Plataform/Sem Título-1.png" id="2_ul882"]
+[ext_resource type="PackedScene" uid="uid://dombxiprs8p6w" path="res://Player/player.tscn" id="2_yimjg"]
+[ext_resource type="PackedScene" uid="uid://bl2npegwvxlhc" path="res://UI/color_aura.tscn" id="3_78pov"]
+[ext_resource type="PackedScene" uid="uid://c7m6b63m6nrre" path="res://Boss/boss_cowboy.tscn" id="4_dxhk1"]
+[ext_resource type="PackedScene" uid="uid://bdrfcvb1sggks" path="res://UI/life.tscn" id="6_qnqlv"]
+[ext_resource type="AudioStream" uid="uid://sf4cclgdfhl5" path="res://Sounds/8bit-music-for-game-68698.mp3" id="8_jil3w"]
+[ext_resource type="AudioStream" uid="uid://614yyldmusfs" path="res://Sounds/tada-fanfare-a-6313.mp3" id="9_3nhc8"]
+[ext_resource type="AudioStream" uid="uid://dyoclytsmw367" path="res://Sounds/surprise-sound-effect-99300.mp3" id="10_38avr"]
+
+[sub_resource type="Curve2D" id="Curve2D_mf10b"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 0, 0, 0, 0, 0, -217, -56, 0, 0, 0, 0, -199, 192)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_62giu"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -1, 0, 0, 0, 0, -178, -68, 0, 0, 0, 0, -188, 141)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_y7von"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1, -1, 0, 0, 0, 0, -117, -67, 0, 0, 0, 0, -146, 100)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_rvsyg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1, 1, 0, 0, 0, 0, -117, -61, 0, 0, 0, 0, -170, 221)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_23e6d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -214, -70, 0, 0, 0, 0, -153, 174)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_5h7pj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 34, 8, 0, 0, 0, 0, -203, -61, 0, 0, 0, 0, -81, 143)
+}
+point_count = 3
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_thx3m")
+
+[node name="SemTítulo-1" type="Sprite2D" parent="."]
+position = Vector2(160, 160)
+texture = ExtResource("2_ul882")
+
+[node name="Plataform" parent="." node_paths=PackedStringArray("_player") instance=ExtResource("1_p8r4j")]
+position = Vector2(23, 253)
+_name = "1"
+_player = NodePath("../Player")
+
+[node name="Plataform2" parent="." node_paths=PackedStringArray("_player") instance=ExtResource("1_p8r4j")]
+position = Vector2(66, 213)
+_name = "2"
+_player = NodePath("../Player")
+
+[node name="Plataform3" parent="." node_paths=PackedStringArray("_player") instance=ExtResource("1_p8r4j")]
+position = Vector2(106, 174)
+_name = "3"
+_player = NodePath("../Player")
+
+[node name="Plataform4" parent="." node_paths=PackedStringArray("_player") instance=ExtResource("1_p8r4j")]
+position = Vector2(51, 287)
+_name = "4"
+_player = NodePath("../Player")
+
+[node name="Plataform5" parent="." node_paths=PackedStringArray("_player") instance=ExtResource("1_p8r4j")]
+position = Vector2(97, 246)
+_name = "5"
+_player = NodePath("../Player")
+
+[node name="Plataform6" parent="." node_paths=PackedStringArray("_player") instance=ExtResource("1_p8r4j")]
+position = Vector2(137, 204)
+_name = "6"
+_player = NodePath("../Player")
+
+[node name="Player" parent="." node_paths=PackedStringArray("_plataform") instance=ExtResource("2_yimjg")]
+position = Vector2(23, 239)
+_plataform = NodePath("../Plataform")
+
+[node name="ColorAura" parent="." instance=ExtResource("3_78pov")]
+offset_left = 283.0
+offset_top = 291.0
+offset_right = 283.0
+offset_bottom = 291.0
+
+[node name="BossCowboy" parent="." node_paths=PackedStringArray("attack1", "attack2", "attack3", "attack4", "attack5", "attack6") instance=ExtResource("4_dxhk1")]
+position = Vector2(273, 41)
+scale = Vector2(3, 3)
+attack1 = NodePath("../Attack1/Path2D/PathFollow2D")
+attack2 = NodePath("../Attack2/Path2D/PathFollow2D")
+attack3 = NodePath("../Attack3/Path2D/PathFollow2D")
+attack4 = NodePath("../Attack4/Path2D/PathFollow2D")
+attack5 = NodePath("../Attack5/Path2D/PathFollow2D")
+attack6 = NodePath("../Attack6/Path2D/PathFollow2D")
+
+[node name="Attack1" type="Node2D" parent="."]
+position = Vector2(220, 63)
+
+[node name="Path2D" type="Path2D" parent="Attack1"]
+curve = SubResource("Curve2D_mf10b")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Attack1/Path2D"]
+position = Vector2(-1, 0)
+rotation = -2.88792
+
+[node name="Attack2" type="Node2D" parent="."]
+position = Vector2(253, 72)
+
+[node name="Path2D" type="Path2D" parent="Attack2"]
+curve = SubResource("Curve2D_62giu")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Attack2/Path2D"]
+position = Vector2(0, -1)
+rotation = -2.78159
+
+[node name="Attack3" type="Node2D" parent="."]
+position = Vector2(251, 73)
+
+[node name="Path2D" type="Path2D" parent="Attack3"]
+curve = SubResource("Curve2D_y7von")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Attack3/Path2D"]
+position = Vector2(1, -1)
+rotation = -2.63162
+
+[node name="Attack4" type="Node2D" parent="."]
+position = Vector2(219, 64)
+
+[node name="Path2D" type="Path2D" parent="Attack4"]
+curve = SubResource("Curve2D_rvsyg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Attack4/Path2D"]
+position = Vector2(-1, 1)
+rotation = -2.65074
+
+[node name="Attack5" type="Node2D" parent="."]
+position = Vector2(251, 72)
+
+[node name="Path2D" type="Path2D" parent="Attack5"]
+curve = SubResource("Curve2D_23e6d")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Attack5/Path2D"]
+rotation = -2.82546
+
+[node name="Attack6" type="Node2D" parent="."]
+position = Vector2(220, 62)
+
+[node name="Path2D" type="Path2D" parent="Attack6"]
+curve = SubResource("Curve2D_5h7pj")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Attack6/Path2D"]
+position = Vector2(34, 8)
+rotation = -2.85828
+
+[node name="Points" type="Label" parent="."]
+offset_left = 152.0
+offset_top = 282.0
+offset_right = 252.0
+offset_bottom = 334.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 15
+text = "Score: 22000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Life" parent="." node_paths=PackedStringArray("vinculo") instance=ExtResource("6_qnqlv")]
+position = Vector2(285, 233)
+vinculo = NodePath("../Player")
+
+[node name="Life2" parent="." node_paths=PackedStringArray("vinculo") instance=ExtResource("6_qnqlv")]
+visible = false
+position = Vector2(180, -6)
+vinculo = NodePath("../BossCowboy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_jil3w")
+autoplay = true
+
+[node name="Congratulations" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_3nhc8")
+
+[node name="what" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_38avr")
+
+[connection signal="finished" from="Congratulations" to="." method="_on_congratulations_finished"]
+
+[editable path="BossCowboy"]
